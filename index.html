@@ -2,91 +2,48 @@
 <html lang="fa">
 <head>
     <meta charset="UTF-8">
-    <title>ورود به حساب پانیشر</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ورود</title>
     <style>
         body {
-            background-color: #f0f0f0; /* پس‌زمینه خاکستری روشن */
-            font-family: 'Tahoma', sans-serif;
+            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            background-color: #f0f0f0;
         }
         .login-container {
             background-color: white;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        .login-container h2 {
-            color: #333;
-            margin-bottom: 20px;
-        }
-        .login-container input {
-            width: 80%;
-            padding: 10px;
+        input {
+            display: block;
+            width: 100%;
             margin: 10px 0;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 16px;
+            padding: 8px;
         }
-        .login-container button {
-            width: 85%;
+        button {
+            width: 100%;
             padding: 10px;
-            background-color: #007bff; /* رنگ آبی دکمه */
+            background-color: #007bff;
             color: white;
             border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-        }
-        .login-container button:hover {
-            background-color: #0056b3; /* رنگ آبی تیره‌تر وقتی روشن می‌گیری */
-        }
-        .login-container p {
-            color: #666;
-            font-size: 12px;
-            margin-top: 10px;
+            border-radius: 4px;
         }
     </style>
 </head>
 <body>
     <div class="login-container">
-        <h2>ورود به حساب</h2>
-        <form id="loginForm">
-            <input type="text" id="username" placeholder="نام کاربری یا ایمیل" required>
-            <input type="password" id="password" placeholder="رمز عبور" required>
+        <h2>ورود</h2>
+        <form action="login.php" method="POST">
+            <input type="text" name="username" placeholder="نام کاربری" required>
+            <input type="password" name="password" placeholder="رمز عبور" required>
             <button type="submit">ورود</button>
         </form>
-        <p>حساب کاربری ندارید؟ <a href="#" style="color: #007bff;">ثبت‌نام کنید</a></p>
-        <p><a href="admin-panel.html?password=admin123" style="color: #007bff;">ورود به پنل مدیریت</a></p>
     </div>
-
-    <script>
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // از رفرش خودکار فرم جلوگیری کن
-            
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-
-            // ذخیره اطلاعات توی Local Storage
-            let loginData = JSON.parse(localStorage.getItem('loginData') || '[]');
-            loginData.push({ username, password, timestamp: new Date().toISOString() });
-            localStorage.setItem('loginData', JSON.stringify(loginData));
-
-            // اطلاعات تست برای هدایت به صفحه هوم
-            const correctUsername = "punisher";
-            const correctPassword = "12345";
-            
-            if (username === correctUsername && password === correctPassword) {
-                window.location.href = "home.html"; // هدایت به صفحه هوم
-            } else {
-                alert("نام کاربری یا رمز عبور اشتباه است!");
-            }
-        });
-    </script>
 </body>
 </html>

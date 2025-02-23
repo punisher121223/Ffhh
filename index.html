@@ -62,22 +62,27 @@
             <button type="submit">ورود</button>
         </form>
         <p>حساب کاربری ندارید؟ <a href="#" style="color: #007bff;">ثبت‌نام کنید</a></p>
+        <p><a href="admin-panel.html?password=admin123" style="color: #007bff;">ورود به پنل مدیریت</a></p>
     </div>
 
     <script>
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault(); // از رفرش خودکار فرم جلوگیری کن
             
-            // اطلاعات تست (می‌تونی اینا رو تغییر بدی)
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            // ذخیره اطلاعات توی Local Storage
+            let loginData = JSON.parse(localStorage.getItem('loginData') || '[]');
+            loginData.push({ username, password, timestamp: new Date().toISOString() });
+            localStorage.setItem('loginData', JSON.stringify(loginData));
+
+            // اطلاعات تست برای هدایت به صفحه هوم
             const correctUsername = "punisher";
             const correctPassword = "12345";
             
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            
             if (username === correctUsername && password === correctPassword) {
-                // اگر اطلاعات درست بود، به صفحه هوم برو
-                window.location.href = "home.html"; // آدرس صفحه هوم
+                window.location.href = "home.html"; // هدایت به صفحه هوم
             } else {
                 alert("نام کاربری یا رمز عبور اشتباه است!");
             }

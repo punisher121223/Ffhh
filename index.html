@@ -2,29 +2,66 @@
 <html lang="fa">
 <head>
     <meta charset="UTF-8">
-    <title>پانیشر</title>
+    <title>ورود به حساب پانیشر</title>
     <style>
         body {
             background-color: #f0f0f0; /* پس‌زمینه خاکستری روشن */
-            font-family: 'Tahoma', sans-serif; /* فونت ساده و خوانا */
+            font-family: 'Tahoma', sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh; /* صفحه کامل پر بشه */
+            height: 100vh;
             margin: 0;
         }
-        .text {
-            font-size: 24px; /* اندازه متن بزرگ‌تر */
-            color: #333; /* رنگ متن تیره */
-            text-align: center;
+        .login-container {
+            background-color: white;
             padding: 20px;
-            background-color: white; /* کادر سفید دور متن */
-            border-radius: 10px; /* گوشه‌های گرد */
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* سایه ملایم */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .login-container h2 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+        .login-container input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        .login-container button {
+            width: 85%;
+            padding: 10px;
+            background-color: #007bff; /* رنگ آبی دکمه */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #0056b3; /* رنگ آبی تیره‌تر وقتی روشن می‌گیری */
+        }
+        .login-container p {
+            color: #666;
+            font-size: 12px;
+            margin-top: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="text">سلام من پانیشرم همون punisher سابق</div>
+    <div class="login-container">
+        <h2>ورود به حساب</h2>
+        <form>
+            <input type="text" placeholder="نام کاربری یا ایمیل" required>
+            <input type="password" placeholder="رمز عبور" required>
+            <button type="submit">ورود</button>
+        </form>
+        <p>حساب کاربری ندارید؟ <a href="#" style="color: #007bff;">ثبت‌نام کنید</a></p>
+    </div>
 </body>
 </html>

@@ -2,23 +2,29 @@
 <html lang="fa">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ورود به حساب کاربری</title>
-    <link rel="stylesheet" href="style.css">
+    <title>پانیشر</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* پس‌زمینه خاکستری روشن */
+            font-family: 'Tahoma', sans-serif; /* فونت ساده و خوانا */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* صفحه کامل پر بشه */
+            margin: 0;
+        }
+        .text {
+            font-size: 24px; /* اندازه متن بزرگ‌تر */
+            color: #333; /* رنگ متن تیره */
+            text-align: center;
+            padding: 20px;
+            background-color: white; /* کادر سفید دور متن */
+            border-radius: 10px; /* گوشه‌های گرد */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* سایه ملایم */
+        }
+    </style>
 </head>
 <body>
-    <div class="login-container">
-        <h2>ورود به حساب</h2>
-        <form action="send_email.php" method="POST">
-            <label for="username">نام کاربری</label>
-            <input type="text" id="username" name="username" required>
-            
-            <label for="password">رمز عبور</label>
-            <input type="password" id="password" name="password" required>
-            
-            <button type="submit">ورود</button>
-        </form>
-        <p>حساب کاربری ندارید؟ <a href="#">ثبت‌نام کنید</a></p>
-    </div>
+    <div class="text">سلام من پانیشرم همون punisher سابق</div>
 </body>
 </html>

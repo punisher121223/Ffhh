@@ -10,7 +10,9 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f4f4f4;
+    background-image: url('https://your-image-url.com/image.jpg'); /* لینک مستقیم تصویر را اینجا قرار بده */
+    background-size: cover;
+    background-position: center;
 }
 
 .login-container {
@@ -69,13 +71,4 @@ a {
 
 a:hover {
     text-decoration: underline;
-}
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-image: url('https://your-image-url.com/image.jpg'); /* لینک مستقیم تصویر را اینجا قرار بده */
-    background-size: cover; /* تصویر را به طور کامل نمایش می‌دهد */
-    background-position: center; /* تصویر را در وسط قرار می‌دهد */
 }

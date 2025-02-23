@@ -10,16 +10,17 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-image: url('https://your-image-url.com/image.jpg'); /* لینک مستقیم تصویر را اینجا قرار بده */
+    background-image: url('https://images.unsplash.com/photo-1518005020951-ecl85c963c18'); /* لینک مستقیم تصویر */
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 }
 
 .login-container {
-    background: white;
+    background: rgba(255, 255, 255, 0.9); /* پس‌زمینه‌ی سفید با شفافیت */
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     width: 300px;
     text-align: center;
 }
@@ -53,6 +54,7 @@ button {
     padding: 10px;
     border-radius: 5px;
     cursor: pointer;
+    transition: background 0.3s ease;
 }
 
 button:hover {

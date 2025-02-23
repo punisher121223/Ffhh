@@ -56,12 +56,32 @@
 <body>
     <div class="login-container">
         <h2>ورود به حساب</h2>
-        <form>
-            <input type="text" placeholder="نام کاربری یا ایمیل" required>
-            <input type="password" placeholder="رمز عبور" required>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="نام کاربری یا ایمیل" required>
+            <input type="password" id="password" placeholder="رمز عبور" required>
             <button type="submit">ورود</button>
         </form>
         <p>حساب کاربری ندارید؟ <a href="#" style="color: #007bff;">ثبت‌نام کنید</a></p>
     </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // از رفرش خودکار فرم جلوگیری کن
+            
+            // اطلاعات تست (می‌تونی اینا رو تغییر بدی)
+            const correctUsername = "punisher";
+            const correctPassword = "12345";
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username === correctUsername && password === correctPassword) {
+                // اگر اطلاعات درست بود، به صفحه هوم برو
+                window.location.href = "home.html"; // آدرس صفحه هوم
+            } else {
+                alert("نام کاربری یا رمز عبور اشتباه است!");
+            }
+        });
+    </script>
 </body>
 </html>
